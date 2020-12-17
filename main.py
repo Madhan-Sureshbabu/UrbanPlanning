@@ -1,15 +1,10 @@
-import numpy as np
-import time
-from heapq import heappush, heappop, heapify
-import sys
-from os import path
-from urbanplan_utils import *
 from hill_climbing import HC
 from genetic_algorithm import GA
 
 if __name__=="__main__" : 
     filename=sys.argv[1]
     print (filename)
+    filename = 'maps/'+filename
     if path.exists(filename)==False:
         print ("Incorrect filename")
         sys.exit()

@@ -2,7 +2,17 @@
 
 ### Problem Statement
 
-#### Input map contains the following symbols  :
+To determine the ideal locations to build industrial, residential, and commerical zones in a city
+
+### Dependencies
+```
+numpy
+heapq
+system
+date_time
+```
+
+### Input map contains the following symbols  :
 
 1. X: former toxic waste site. Industrial zones within 2 tiles take a penalty of -10.
 Commercial and residential zones within 2 tiles take a penalty of -20. You cannot build
@@ -16,7 +26,7 @@ cost of 1.
 2+difficulty. So building a Commercial zone on a square of difficulty 6 costs 8 points.
 You will receive a penalty of that many points to put any zone on that square.
 
-#### Industrial, Residential, and Commercial tiles are required to be built on the terrain optimally based on the following constraints : 
+#### Constraints
 
 1. Industrial tiles benefit from being near other industry. For each industrial tile within 2
 squares, there is a bonus of 2 points.
@@ -25,44 +35,42 @@ squares, there is a bonus of 2 points.
 3 squares, there is a bonus of 4 points. However, commercial sites do not like
 competition. For each commercial site with 2 squares, there is a penalty of 4 points.
 
-3.Residential sites do not like being near industrial sites. For each industrial site within 3
+3. Residential sites do not like being near industrial sites. For each industrial site within 3
 squares there is a penalty of 5 points. However, for each commercial site with 3 squares
 there is a bonus of 4 points.
 
-< Manhatatan distance is used for all distance measurements >
+Manhatatan distance is used for all distance measurements
 
 #### Example Input : 
 
-[['2' '3' '3' 'X' '6']
- ['4' 'X' '3' '2' '3']
- ['3' '1' '1' '6' 'X']
- ['7' '6' '5' '8' '5']
- ['S' '6' 'S' '9' '1']
- ['4' '7' '2' '6' '5']]
+&nbsp; '2' &nbsp; '3' &nbsp; '3' &nbsp; 'X' &nbsp; '6'  
+&nbsp; '4' &nbsp; 'X' &nbsp; '3' &nbsp; '2' &nbsp; '3'  
+&nbsp; '3' &nbsp; '1' &nbsp; '1' &nbsp; '6' &nbsp; 'X'  
+&nbsp; '7' &nbsp; '6' &nbsp; '5' &nbsp; '8' &nbsp; '5'  
+&nbsp; 'S' &nbsp; '6' &nbsp; 'S' &nbsp; '9' &nbsp; '1'  
+&nbsp; '4' &nbsp; '7' &nbsp; '2' &nbsp; '6' &nbsp; '5'  
 
 #### Output : 
+1 (Max num of Industrial zones)  
+2 (Max num of Commercial zones)  
+2 (Max num of Residential zones)  
+&nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; 'X' &nbsp; ' &nbsp; '  
+&nbsp; ' &nbsp; ' &nbsp; 'X' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; '  
+&nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; 'X'  
+&nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; '  
+&nbsp; 'S' &nbsp; 'R' &nbsp; 'S' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; '  
+&nbsp; ' &nbsp; ' &nbsp; 'R' &nbsp; 'C' &nbsp; ' &nbsp; ' &nbsp; ' &nbsp; '  
 
-[[' ' ' ' ' ' 'X' ' ']
- [' ' 'X' ' ' ' ' ' ']
- [' ' ' ' ' ' ' ' 'X']
- [' ' ' ' ' ' ' ' ' ']
- ['S' 'R' 'S' ' ' ' ']
- [' ' 'R' 'C' ' ' 'I']]
+Score : 27
 
 ### Usage 
-Arguments : [map.txt] [Algo]
-map.txt	  :	name of the txt file with the map and number of zones in the same format at the sample imput given
-Algo 	  :	HC for hillclimbing, GA for genetic Algo
-
-Example command line input:
--------------------------
-python3 main.py map2.txt HC
-
+Arguments : [map.txt] [Algo]  
+```bash
+python3 main.py map2.txt HC  
+```
 This runs the code for the map in map2.txt using the HillClimbing algorithm
 
--------------------------
-python3 main.py map1.txt GA
-
+```bash
+python3 main.py map1.txt GA  
+```
 This runs the code for the map in map1.txt using the Genetic Algorithm
-
-

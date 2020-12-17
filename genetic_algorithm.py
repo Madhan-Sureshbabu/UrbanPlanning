@@ -1,9 +1,3 @@
-import numpy as np
-import time
-from heapq import heappush, heappop, heapify
-import sys
-from os import path
-from urbanplan_utils import *
 from hill_climbing import urban_plan
 
 class GA(urban_plan) :
